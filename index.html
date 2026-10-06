@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campus Network — Cisco Packet Tracer Project</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg-field" aria-hidden="true"></div>
+
+<button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle navigation">☰</button>
+
+<!-- ============================================================
+     SIDEBAR
+     ============================================================ -->
+<aside class="sidebar" id="sidebar">
+
+    <div class="logo">
+        <div class="logo-icon">CN</div>
+        <div>
+            <h2>Campus Network</h2>
+            <span>Packet Tracer Project</span>
+        </div>
+    </div>
+
+    <nav class="navigation">
+
+        <p class="nav-section-label">Campus Network</p>
+
+        <button class="nav-item active" data-view="overview" data-breadcrumb="Campus Network / Overview" data-title="Project Overview">
+            <span class="nav-glyph">◈</span>
+            <span class="nav-label-group"><span class="nav-title">Overview</span></span>
+        </button>
+
+        <button class="nav-item" data-view="architecture" data-breadcrumb="Campus Network / Architecture" data-title="Network Architecture">
+            <span class="nav-glyph">▤</span>
+            <span class="nav-label-group"><span class="nav-title">Network Architecture</span></span>
+        </button>
+
+        <p class="nav-section-label">Modules</p>
+
+        <button class="nav-item" data-view="module-1" data-breadcrumb="Campus Network / Module 1" data-title="Campus Network Foundation">
+            <span class="nav-glyph">01</span>
+            <span class="nav-label-group">
+                <span class="nav-title">Campus Network Foundation</span>
+                <span class="nav-sub">Module 1</span>
+            </span>
+        </button>
+
+        <button class="nav-item" data-view="module-2" data-breadcrumb="Campus Network / Module 2" data-title="VLSM + Static &amp; Default Routing">
+            <span class="nav-glyph">02</span>
+            <span class="nav-label-group">
+                <span class="nav-title">VLSM + Static &amp; Default Routing</span>
+                <span class="nav-sub">Module 2</span>
+            </span>
+        </button>
+
+        <button class="nav-item" data-view="module-3" data-breadcrumb="Campus Network / Module 3" data-title="RIP v1 + RIP v2">
+            <span class="nav-glyph">03</span>
+            <span class="nav-label-group">
+                <span class="nav-title">RIP v1 + RIP v2</span>
+                <span class="nav-sub">Module 3</span>
+            </span>
+        </button>
+
+        <button class="nav-item" data-view="module-4a" data-breadcrumb="Campus Network / Module 4A" data-title="Single-Area OSPF">
+            <span class="nav-glyph">04A</span>
+            <span class="nav-label-group">
+                <span class="nav-title">Single-Area OSPF</span>
+                <span class="nav-sub">Module 4A</span>
+            </span>
+        </button>
+
+        <button class="nav-item" data-view="module-4b" data-breadcrumb="Campus Network / Module 4B" data-title="Multi-Area OSPF">
+            <span class="nav-glyph">04B</span>
+            <span class="nav-label-group">
+                <span class="nav-title">Multi-Area OSPF</span>
+                <span class="nav-sub">Module 4B</span>
+            </span>
+        </button>
+
+        <button class="nav-item" data-view="module-5" data-breadcrumb="Campus Network / Module 5" data-title="WAN + NAT + EIGRP + BGP">
+            <span class="nav-glyph">05</span>
+            <span class="nav-label-group">
+                <span class="nav-title">WAN + NAT + EIGRP + BGP</span>
+                <span class="nav-sub">Module 5</span>
+            </span>
+        </button>
+
+    </nav>
+
+    <div class="sidebar-bottom">
+        <p>Cisco Packet Tracer</p>
+        <span>5-module campus network build · documentation platform</span>
+    </div>
+
+</aside>
+
+
+<!-- ============================================================
+     MAIN CONTENT
+     ============================================================ -->
+<main class="main-content">
+
+    <header class="topbar">
+        <div>
+            <p class="breadcrumb" id="topBreadcrumb">Campus Network / Overview</p>
+            <h1 id="topTitle">Project Overview</h1>
+        </div>
+        <div class="hud-cluster">
+            <div class="status"><span class="status-dot"></span> NETWORK LAB ONLINE</div>
+        </div>
+    </header>
+
+
+    <!-- ================= OVERVIEW ================= -->
+    <section class="view" id="view-overview">
+
+        <div class="hero-card">
+            <div class="hero-copy">
+                <p class="small-label">Cisco Packet Tracer · College Project</p>
+                <h2>Campus Network — <span>Cisco Packet Tracer</span></h2>
+                <p class="hero-text">
+                    A five-module build of a scalable campus network: LAN foundations, VLSM
+                    addressing and static routing, RIP, single- and multi-area OSPF, and a
+                    WAN edge with NAT, EIGRP and BGP. Each module documents the
+                    objective, topology, configuration and verification of the actual
+                    Packet Tracer experiment.
+                </p>
+                <div style="display:flex; gap:12px; flex-wrap:wrap;">
+                    <button class="btn btn-primary" data-goto="module-1">Open Module 1</button>
+                    <button class="btn btn-secondary" data-goto="architecture">View architecture</button>
+                </div>
+            </div>
+            <div class="hero-diagram">
+                <svg class="mini-net" viewBox="0 0 320 260" xmlns="http://www.w3.org/2000/svg">
+                    <line class="net-link flow" x1="160" y1="26" x2="160" y2="66" />
+                    <line class="net-link flow" x1="160" y1="92" x2="70" y2="140" />
+                    <line class="net-link flow" x1="160" y1="92" x2="160" y2="140" />
+                    <line class="net-link flow" x1="160" y1="92" x2="250" y2="140" />
+                    <line class="net-link" x1="70" y1="164" x2="70" y2="200" />
+                    <line class="net-link" x1="160" y1="164" x2="160" y2="200" />
+                    <line class="net-link" x1="250" y1="164" x2="250" y2="200" />
+                    <g class="net-node"><circle class="node-circle core" cx="160" cy="16" r="16" /><text x="160" y="20" text-anchor="middle">R1</text></g>
+                    <g class="net-node"><circle class="node-circle" cx="160" cy="80" r="14" /><text x="160" y="84" text-anchor="middle">SW</text></g>
+                    <g class="net-node"><circle class="node-circle host" cx="70" cy="152" r="12" /><text x="70" y="156" text-anchor="middle">PC</text></g>
+                    <g class="net-node"><circle class="node-circle host" cx="160" cy="152" r="12" /><text x="160" y="156" text-anchor="middle">PC</text></g>
+                    <g class="net-node"><circle class="node-circle host" cx="250" cy="152" r="12" /><text x="250" y="156" text-anchor="middle">SRV</text></g>
+                </svg>
+            </div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card"><div class="stat-icon">▦</div><div><p>Project modules</p><h3>5</h3></div></div>
+            <div class="stat-card"><div class="stat-icon">⛃</div><div><p>Packet Tracer files</p><h3>6</h3></div></div>
+            <div class="stat-card"><div class="stat-icon">⌁</div><div><p>Routing protocols covered</p><h3>4</h3></div></div>
+            <div class="stat-card"><div class="stat-icon">✓</div><div><p>Modules documented</p><h3>5 / 5</h3></div></div>
+        </div>
+
+        <div class="progress-card">
+            <div class="progress-card-head">
+                <h3>Module Progress</h3>
+                <span>5 / 5 modules documented</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" style="width:100%;"></div></div>
+        </div>
+
+        <div class="section-heading">
+            <div>
+                <p class="small-label">Learning path</p>
+                <h2>Network Modules</h2>
+            </div>
+            <span class="count-pill">5 modules</span>
+        </div>
+
+        <div class="module-grid" id="moduleGrid">
+            <!-- Module cards injected by script.js from MODULE_DATA -->
+        </div>
+
+    </section>
+
+
+    <!-- ================= ARCHITECTURE ================= -->
+    <section class="view" id="view-architecture" hidden>
+
+        <div class="panel">
+            <div class="panel-header">
+                <div>
+                    <p class="small-label" style="color:var(--blue); font-size:11.5px; text-transform:uppercase; letter-spacing:.07em; font-weight:600;">Full build</p>
+                    <h2>Campus Network — End-to-End Architecture</h2>
+                </div>
+            </div>
+            <p style="color:var(--text-muted); font-size:13.5px; max-width:74ch; margin-bottom:18px;">
+                Across the five modules, one campus LAN (Module 1) grows into a multi-block,
+                multi-protocol network: VLSM-subnetted blocks with static routing (Module 2),
+                RIP-routed segments (Module 3), single- and multi-area OSPF (Module 4), and a
+                WAN edge to an external network using NAT, EIGRP and BGP (Module 5).
+            </p>
+            <div class="arch-diagram-wrap">
+                <svg class="net-diagram-svg" viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg">
+                    <line class="net-link flow" x1="70" y1="100" x2="150" y2="100" />
+                    <line class="net-link flow" x1="210" y1="100" x2="290" y2="100" />
+                    <line class="net-link flow" x1="350" y1="100" x2="430" y2="100" />
+                    <line class="net-link flow" x1="490" y1="100" x2="570" y2="100" />
+                    <line class="net-link flow" x1="630" y1="100" x2="710" y2="100" />
+                    <text class="link-label" x="180" y="88" text-anchor="middle">LAN</text>
+                    <text class="link-label" x="320" y="88" text-anchor="middle">VLSM</text>
+                    <text class="link-label" x="460" y="88" text-anchor="middle">RIP</text>
+                    <text class="link-label" x="600" y="88" text-anchor="middle">OSPF</text>
+                    <text class="link-label" x="670" y="88" text-anchor="middle">WAN</text>
+                    <g class="net-node"><rect class="node-rect" x="10" y="80" width="60" height="40" rx="6" /><text x="40" y="104" text-anchor="middle">M1</text></g>
+                    <g class="net-node"><circle class="node-circle core" cx="180" cy="100" r="20" /><text x="180" y="104" text-anchor="middle">M2</text></g>
+                    <g class="net-node"><circle class="node-circle core" cx="320" cy="100" r="20" /><text x="320" y="104" text-anchor="middle">M3</text></g>
+                    <g class="net-node"><circle class="node-circle core" cx="460" cy="100" r="20" /><text x="460" y="104" text-anchor="middle">M4</text></g>
+                    <g class="net-node"><circle class="node-circle core" cx="600" cy="100" r="20" /><text x="600" y="104" text-anchor="middle">M5</text></g>
+                    <g class="net-node"><rect class="node-rect" x="740" y="80" width="70" height="40" rx="6" /><text x="775" y="104" text-anchor="middle">ISP</text></g>
+                </svg>
+            </div>
+            <p class="figure-caption">Conceptual module sequence — not the actual Packet Tracer topology. Module 1's real topology is documented on the Module 1 page.</p>
+        </div>
+
+    </section>
+
+
+    <!-- ================= MODULE 1 (full implementation) ================= -->
+    <section class="view" id="view-module-1" hidden>
+        <div class="module-page">
+
+            <nav class="module-toc" id="module1Toc">
+                <a href="#m1-overview" class="active"><span class="toc-num">01</span> Overview</a>
+                <a href="#m1-objective"><span class="toc-num">02</span> Objective</a>
+                <a href="#m1-concepts"><span class="toc-num">03</span> Concepts</a>
+                <a href="#m1-topology"><span class="toc-num">04</span> Topology</a>
+                <a href="#m1-devices"><span class="toc-num">05</span> Devices &amp; Connections</a>
+                <a href="#m1-addressing"><span class="toc-num">06</span> Addressing</a>
+                <a href="#m1-configuration"><span class="toc-num">07</span> Configuration</a>
+                <a href="#m1-networking-commands"><span class="toc-num">08</span> Networking Commands</a>
+                <a href="#m1-video"><span class="toc-num">09</span> Experiment Video</a>
+                <a href="#m1-screenshots"><span class="toc-num">10</span> Screenshots</a>
+                <a href="#m1-download"><span class="toc-num">11</span> Packet Tracer File</a>
+                <a href="#m1-verification"><span class="toc-num">12</span> Verification</a>
+                <a href="#m1-result"><span class="toc-num">13</span> Result</a>
+            </nav>
+
+            <div class="module-body">
+
+                <div class="module-hero">
+                    <p class="small-label">Module 1</p>
+                    <h1>Campus Network Foundation</h1>
+                    <p>Build a small campus LAN representing one building/block of the campus network, using a router, two switches, four PCs and a server.</p>
+                    <div class="module-hero-topics">
+                        <span class="chip">Packet Tracer basics</span>
+                        <span class="chip">Networking commands</span>
+                        <span class="chip">Cables &amp; devices</span>
+                        <span class="chip">Peer-to-peer network</span>
+                        <span class="chip">Topologies</span>
+                        <span class="chip">Router configuration</span>
+                        <span class="chip">Passwords</span>
+                        <span class="chip">Interfaces</span>
+                    </div>
+                </div>
+
+                <!-- 01 OVERVIEW -->
+                <div class="doc-section" id="m1-overview">
+                    <div class="doc-section-head"><span class="doc-num">01</span><h2>Overview</h2></div>
+                    <div class="doc-card">
+                        <p>Module 1 lays the foundation for the campus network project. It introduces the Cisco Packet Tracer environment, basic networking commands, device cabling, and the construction of a small local area network (LAN) that will represent one block of the wider campus.</p>
+                        <p>The module covers a peer-to-peer style LAN built from an extended-star topology, router interface configuration, password/security setup on the router, and verification of connectivity between end devices.</p>
+                    </div>
+                </div>
+
+                <!-- 02 OBJECTIVE -->
+                <div class="doc-section" id="m1-objective">
+                    <div class="doc-section-head"><span class="doc-num">02</span><h2>Objective</h2></div>
+                    <div class="doc-card">
+                        <p><strong>Build a small campus LAN representing one building/block of the campus network.</strong></p>
+                        <p>This is achieved using 1 Cisco 2911 router, 2 Cisco 2960 switches, 4 PCs and 1 server, connected in an extended-star topology, with the router providing the Layer 3 gateway for the LAN.</p>
+                    </div>
+                </div>
+
+                <!-- 03 CONCEPTS -->
+                <div class="doc-section" id="m1-concepts">
+                    <div class="doc-section-head"><span class="doc-num">03</span><h2>Concepts</h2></div>
+                    <div class="concept-grid" id="conceptGrid"></div>
+                </div>
+
+                <!-- 04 TOPOLOGY -->
+                <div class="doc-section" id="m1-topology">
+                    <div class="doc-section-head"><span class="doc-num">04</span><h2>Topology</h2></div>
+                    <div class="topology-figure">
+                        <div>
+                            <div class="topology-img-frame" data-lightbox-src="module1-topology.png" data-lightbox-caption="Module 1 — actual Packet Tracer topology (Router0, Switch0, Switch1, PC0–PC3, Server0)">
+                                <img src="module1-topology.png" alt="Module 1 Packet Tracer topology"
+                                     onerror="this.closest('.topology-img-frame').outerHTML='&lt;div class=&quot;asset-missing&quot;&gt;&lt;span class=&quot;am-icon&quot;&gt;⚠&lt;/span&gt;Asset not found: &lt;code&gt;module1-topology.png&lt;/code&gt;&lt;br&gt;Place the real Packet Tracer screenshot in the project folder with this exact filename.&lt;/div&gt;'">
+                                <span class="zoom-hint">Click to zoom</span>
+                            </div>
+                            <p class="figure-caption">Fig. 1 — Actual Module 1 topology captured from Cisco Packet Tracer: Router0, Switch0, Switch1, PC0, PC1, PC2, PC3, Server0.</p>
+                        </div>
+                        <div class="topology-notes">
+                            <p style="font-size:13px; color:var(--text-muted); margin-bottom:12px;">Role of each device in the LAN:</p>
+                            <ul>
+                                <li><strong>Router0</strong> — acts as the Layer 3 gateway for the LAN, routing traffic in and out of the block.</li>
+                                <li><strong>Switch0 / Switch1</strong> — connect end devices within the LAN and forward Ethernet frames at Layer 2.</li>
+                                <li><strong>PC0–PC3</strong> — represent end-user devices in the campus network.</li>
+                                <li><strong>Server0</strong> — represents a server connected to the campus LAN.</li>
+                            </ul>
+                            <p style="font-size:13px; color:var(--text-muted); margin-top:14px;">The LAN follows an <strong>extended-star</strong> structure: Router0 connects to Switch0, Switch0 connects out to PC0, Server0, and to Switch1, and Switch1 connects to PC2 and PC3. Typical communication paths are:</p>
+                            <ul style="margin-top:10px;">
+                                <li>PC → Switch → Router (device reaching the gateway)</li>
+                                <li>PC → Switch → Switch → PC (device on one switch reaching a device on the other)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 05 DEVICES & CONNECTIONS -->
+                <div class="doc-section" id="m1-devices">
+                    <div class="doc-section-head"><span class="doc-num">05</span><h2>Devices &amp; Connections</h2></div>
+
+                    <p style="font-size:12.5px; color:var(--text-faint); margin-bottom:8px; text-transform:uppercase; letter-spacing:.05em; font-weight:600;">Device inventory</p>
+                    <div class="table-scroll" style="margin-bottom:22px;">
+                        <table class="data-table">
+                            <thead><tr><th>Device</th><th>Type</th><th>Quantity</th><th>Role</th></tr></thead>
+                            <tbody>
+                                <tr><td>Router0</td><td>Cisco 2911 Router</td><td>1</td><td>LAN gateway / Layer 3 routing</td></tr>
+                                <tr><td>Switch0, Switch1</td><td>Cisco 2960 Switch</td><td>2</td><td>Layer 2 frame forwarding for end devices</td></tr>
+                                <tr><td>PC0–PC3</td><td>PC</td><td>4</td><td>End-user devices</td></tr>
+                                <tr><td>Server0</td><td>Server</td><td>1</td><td>Network server for the campus LAN</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p style="font-size:12.5px; color:var(--text-faint); margin-bottom:8px; text-transform:uppercase; letter-spacing:.05em; font-weight:600;">Connections (as documented)</p>
+                    <div class="table-scroll">
+                        <table class="data-table">
+                            <thead><tr><th>From</th><th>To</th><th>Cable</th></tr></thead>
+                            <tbody>
+                                <tr><td class="mono-cell">Router G0/0</td><td class="mono-cell">Switch1 F0/1</td><td>Copper Straight-Through</td></tr>
+                                <tr><td class="mono-cell">Switch1 F0/2</td><td class="mono-cell">PC1</td><td>Copper Straight-Through</td></tr>
+                                <tr><td class="mono-cell">Switch1 F0/3</td><td class="mono-cell">PC2</td><td>Copper Straight-Through</td></tr>
+                                <tr><td class="mono-cell">Switch1 F0/4</td><td class="mono-cell">Server</td><td>Copper Straight-Through</td></tr>
+                                <tr><td class="mono-cell">Switch1 F0/5</td><td class="mono-cell">Switch2 F0/1</td><td>Copper Straight-Through</td></tr>
+                                <tr><td class="mono-cell">Switch2 F0/2</td><td class="mono-cell">PC3</td><td>Copper Straight-Through</td></tr>
+                                <tr><td class="mono-cell">Switch2 F0/3</td><td class="mono-cell">PC4</td><td>Copper Straight-Through</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="note-box">Connection labels reproduced exactly as documented in the lab material (Switch1/Switch2, PC1–PC4 naming as given). These map to Switch0/Switch1 and PC0–PC3/Server0 as shown in the actual topology screenshot above.</p>
+                </div>
+
+                <!-- 06 ADDRESSING -->
+                <div class="doc-section" id="m1-addressing">
+                    <div class="doc-section-head"><span class="doc-num">06</span><h2>Addressing</h2></div>
+                    <div class="table-scroll">
+                        <table class="data-table">
+                            <thead><tr><th>Device</th><th>IP Address</th><th>Subnet Mask</th><th>Default Gateway</th></tr></thead>
+                            <tbody>
+                                <tr><td>Router</td><td class="mono-cell">192.168.10.1</td><td class="mono-cell">255.255.255.0</td><td>—</td></tr>
+                                <tr><td>PC1</td><td class="mono-cell">192.168.10.10</td><td class="mono-cell">255.255.255.0</td><td class="mono-cell">192.168.10.1</td></tr>
+                                <tr><td>PC2</td><td class="mono-cell">192.168.10.11</td><td class="mono-cell">255.255.255.0</td><td class="mono-cell">192.168.10.1</td></tr>
+                                <tr><td>PC3</td><td class="mono-cell">192.168.10.12</td><td class="mono-cell">255.255.255.0</td><td class="mono-cell">192.168.10.1</td></tr>
+                                <tr><td>PC4</td><td class="mono-cell">192.168.10.13</td><td class="mono-cell">255.255.255.0</td><td class="mono-cell">192.168.10.1</td></tr>
+                                <tr><td>Server</td><td class="mono-cell">192.168.10.100</td><td class="mono-cell">255.255.255.0</td><td class="mono-cell">192.168.10.1</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p style="font-size:12.5px; color:var(--text-faint); margin:20px 0 8px; text-transform:uppercase; letter-spacing:.05em; font-weight:600;">End device configuration — evidence</p>
+                    <div class="verify-grid">
+                        <div class="verify-card">
+                            <h4>PC IP Configuration</h4>
+                            <div class="verify-img-frame" data-lightbox-src="module1-pc-ip-configuration.png" data-lightbox-caption="PC IP configuration — IP address, subnet mask and default gateway set.">
+                                <img src="module1-pc-ip-configuration.png" alt="PC IP configuration screenshot"
+                                     onerror="this.closest('.verify-img-frame').outerHTML='&lt;div class=&quot;asset-missing&quot;&gt;&lt;span class=&quot;am-icon&quot;&gt;⚠&lt;/span&gt;Asset not found: &lt;code&gt;module1-pc-ip-configuration.png&lt;/code&gt;&lt;/div&gt;'">
+                            </div>
+                            <p>Shows a PC configured with its IP address, subnet mask and default gateway matching the addressing table above.</p>
+                        </div>
+                        <div class="verify-card">
+                            <h4>Server IP Configuration</h4>
+                            <div class="verify-img-frame" data-lightbox-src="module1-server-ip-configuration.png" data-lightbox-caption="Server IP configuration.">
+                                <img src="module1-server-ip-configuration.png" alt="Server IP configuration screenshot"
+                                     onerror="this.closest('.verify-img-frame').outerHTML='&lt;div class=&quot;asset-missing&quot;&gt;&lt;span class=&quot;am-icon&quot;&gt;⚠&lt;/span&gt;Asset not found: &lt;code&gt;module1-server-ip-configuration.png&lt;/code&gt;&lt;/div&gt;'">
+                            </div>
+                            <p>Shows Server0 configured with its static IP address, subnet mask and default gateway.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 07 CONFIGURATION -->
+                <div class="doc-section" id="m1-configuration">
+                    <div class="doc-section-head"><span class="doc-num">07</span><h2>Configuration</h2></div>
+                    <div class="config-steps" id="configSteps"></div>
+
+                    <p style="font-size:12.5px; color:var(--text-faint); margin:22px 0 8px; text-transform:uppercase; letter-spacing:.05em; font-weight:600;">Password / Security — evidence</p>
+                    <div class="doc-card">
+                        <div class="verify-img-frame" data-lightbox-src="module1-router-login.png" data-lightbox-caption="Router console — User Access Verification prompt." style="max-width:480px; margin-bottom:12px;">
+                            <img src="module1-router-login.png" alt="Router login screenshot"
+                                 onerror="this.closest('.verify-img-frame').outerHTML='&lt;div class=&quot;asset-missing&quot;&gt;&lt;span class=&quot;am-icon&quot;&gt;⚠&lt;/span&gt;Asset not found: &lt;code&gt;module1-router-login.png&lt;/code&gt;&lt;/div&gt;'">
+                        </div>
+                        <p>The router console shows <strong>User Access Verification</strong> and a <strong>Password:</strong> prompt before reaching the <code>Router&gt;</code> command line. This confirms the router requires password authentication before any CLI access is granted, matching the <span class="mono-cell">line console 0</span> / <span class="mono-cell">line vty 0 4</span> password configuration.</p>
+                    </div>
+                </div>
+
+                <!-- 08 NETWORKING COMMANDS -->
+                <div class="doc-section" id="m1-networking-commands">
+                    <div class="doc-section-head"><span class="doc-num">08</span><h2>Networking Commands</h2></div>
+                    <p class="note-box" style="margin-bottom:14px; margin-top:0;">Command reference only — no screenshot of this output has been provided, so no terminal output is shown here.</p>
+                    <div class="cmd-ref-list" id="cmdRefList"></div>
+                </div>
+
+                <!-- 09 VIDEO -->
+                <div class="doc-section" id="m1-video">
+                    <div class="doc-section-head"><span class="doc-num">09</span><h2>Experiment Video</h2></div>
+                    <div class="doc-card" style="padding-bottom:18px;">
+                        <p style="margin-bottom:14px;">Module 1 — Experiment Walkthrough. A recorded run-through of the Packet Tracer experiment: building the topology, cabling the devices, configuring the router, and verifying connectivity.</p>
+                        <div class="video-wrap">
+                            <video controls preload="metadata" playsinline id="m1Video">
+                                <source src="module1-experiment-walkthrough.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10 SCREENSHOTS -->
+                <div class="doc-section" id="m1-screenshots">
+                    <div class="doc-section-head"><span class="doc-num">10</span><h2>Screenshots</h2></div>
+                    <div id="galleryWrap"></div>
+                </div>
+
+                <!-- 11 PACKET TRACER FILE -->
+                <div class="doc-section" id="m1-download">
+                    <div class="doc-section-head"><span class="doc-num">11</span><h2>Packet Tracer File</h2></div>
+                    <div class="pkt-card">
+                        <div class="pkt-icon">⤓</div>
+                        <div class="pkt-info">
+                            <h4>module1.pkt</h4>
+                            <p>Packet Tracer file for the Module 1 Campus Network Foundation experiment.</p>
+                        </div>
+                        <a class="btn btn-primary" href="module1.pkt" download>Download .pkt</a>
+                    </div>
+                </div>
+
+                <!-- 12 VERIFICATION -->
+                <div class="doc-section" id="m1-verification">
+                    <div class="doc-section-head"><span class="doc-num">12</span><h2>Verification</h2></div>
+
+                    <div class="verify-grid">
+                        <div class="verify-card">
+                            <h4>Interface Verification — <span class="mono-cell" style="font-size:12px;">show ip interface brief</span></h4>
+                            <div class="verify-img-frame" data-lightbox-src="module1-interface-verification.png" data-lightbox-caption="show ip interface brief output on Router0.">
+                                <img src="module1-interface-verification.png" alt="Interface verification screenshot"
+                                     onerror="this.closest('.verify-img-frame').outerHTML='&lt;div class=&quot;asset-missing&quot;&gt;&lt;span class=&quot;am-icon&quot;&gt;⚠&lt;/span&gt;Asset not found: &lt;code&gt;module1-interface-verification.png&lt;/code&gt;&lt;/div&gt;'">
+                            </div>
+                            <p><strong>show ip interface brief</strong> lists each interface name, its IP address, and its Status/Protocol columns. A status of <strong>up / up</strong> means the interface is administratively enabled and the Layer 1/Layer 2 link is active — the interface is ready to pass traffic. Exact values are as shown in the screenshot; no output is invented beyond what is visible there.</p>
+                        </div>
+                        <div class="verify-card">
+                            <h4>Connectivity Verification</h4>
+                            <div class="verify-img-frame" data-lightbox-src="module1-connectivity-verification.png" data-lightbox-caption="Ping results confirming end-to-end connectivity.">
+                                <img src="module1-connectivity-verification.png" alt="Connectivity verification screenshot"
+                                     onerror="this.closest('.verify-img-frame').outerHTML='&lt;div class=&quot;asset-missing&quot;&gt;&lt;span class=&quot;am-icon&quot;&gt;⚠&lt;/span&gt;Asset not found: &lt;code&gt;module1-connectivity-verification.png&lt;/code&gt;&lt;/div&gt;'">
+                            </div>
+                            <p>Documented checks: <span class="mono-cell">ping 192.168.10.1</span>, <span class="mono-cell">ping 192.168.10.13</span>, <span class="mono-cell">ping 192.168.10.100</span>. Ping sends ICMP echo requests and waits for echo replies, verifying that a path exists and that the destination is reachable at the IP layer. Results shown are exactly what appears in the screenshot above.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 13 RESULT -->
+                <div class="doc-section" id="m1-result" style="margin-bottom:10px;">
+                    <div class="doc-section-head"><span class="doc-num">13</span><h2>Result</h2></div>
+                    <div class="result-card">
+                        <div class="result-icon">✓</div>
+                        <p>Module 1 established a basic campus LAN using a router, two switches, four PCs and a server. IP addressing, router interface configuration, password protection and basic connectivity were demonstrated and verified.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ================= VLSM + STATIC & DEFAULT ROUTING ================= -->
+    <section class="view" id="view-module-2" hidden>
+        <div class="module-page">
+
+            <nav class="module-toc" id="m2Toc">
+<a href="#m2-overview" class="active"><span class="toc-num">01</span> Overview</a>
+<a href="#m2-objective"><span class="toc-num">02</span> Objective</a>
+<a href="#m2-concepts"><span class="toc-num">03</span> Concepts / Technologies</a>
+<a href="#m2-topology"><span class="toc-num">04</span> Topology</a>
+<a href="#m2-addressing"><span class="toc-num">05</span> Devices &amp; Addressing</a>
+<a href="#m2-configuration"><span class="toc-num">06</span> Configuration</a>
+<a href="#m2-commands"><span class="toc-num">07</span> Verification Commands</a>
+<a href="#m2-video"><span class="toc-num">08</span> Experiment Video</a>
+<a href="#m2-screenshots"><span class="toc-num">09</span> Screenshots</a>
+<a href="#m2-verification"><span class="toc-num">10</span> Verification</a>
+<a href="#m2-download"><span class="toc-num">11</span> Packet Tracer File</a>
+<a href="#m2-result"><span class="toc-num">12</span> Result</a>
+</nav>
+
+            <div class="module-body">
+
+                <div class="module-hero">
+                    <p class="small-label">Module 2</p>
+                    <h1>VLSM + Static & Default Routing</h1>
+                    <p>Subnet a single campus block with VLSM to fit three department networks exactly, then connect every block with static routes.</p>
+                    <div class="module-hero-topics"><span class="chip">VLSM</span><span class="chip">Subnetting</span><span class="chip">Static Routing</span><span class="chip">Default Routing</span></div>
+                </div>
+
+                <div class="doc-section" id="m2-overview">
+    <div class="doc-section-head"><span class="doc-num">01</span><h2>Overview</h2></div>
+    <div class="doc-card"><p>Module 2 takes one starting block, <span class="mono-cell">192.168.50.0/24</span>, and divides it using Variable Length Subnet Masking (VLSM) so each department network is sized to what it actually needs instead of every subnet being the same size.</p><p>Three department blocks — Administration, Computer Science and Library — are carved out at different prefix lengths, and two point-to-point links between the routers are carved out as /30 networks. Static routes (and a default route where appropriate) are then used to give every block full reachability to the others.</p></div>
+</div>
+
+                <div class="doc-section" id="m2-objective">
+    <div class="doc-section-head"><span class="doc-num">02</span><h2>Objective</h2></div>
+    <div class="doc-card"><p>Subnet <span class="mono-cell">192.168.50.0/24</span> with VLSM to fit the Administration, Computer Science and Library networks, then achieve end-to-end reachability between all three blocks using static and default routing.</p></div>
+</div>
+
+                <div class="doc-section" id="m2-concepts">
+    <div class="doc-section-head"><span class="doc-num">03</span><h2>Concepts / Technologies</h2></div>
+    <div class="concept-grid"><div class="concept-card"><h4>What is VLSM?</h4><p>Variable Length Subnet Masking — subnetting the same network into blocks of different sizes, so each subnet is only as large as the number of hosts it actually needs.</p></div><div class="concept-card"><h4>Why not just use one fixed subnet size?</h4><p>A single fixed size either wastes addresses on small networks or is too small for large ones. VLSM lets a /26, /27 and /28 come from the same /24 without overlap.</p></div><div class="concept-card"><h4>What does /26, /27, /28 mean?</h4><p>The prefix length is the number of network bits in the mask. A /26 gives 64 addresses, a /27 gives 32, and a /28 gives 16 — each smaller prefix halves the block size.</p></div><div class="concept-card"><h4>What is a static route?</h4><p>A manually configured route, entered with the <span class="mono-cell">ip route</span> command, that tells a router how to reach a specific remote network through a given next-hop.</p></div><div class="concept-card"><h4>What is a default route?</h4><p>A static route for <span class="mono-cell">0.0.0.0 0.0.0.0</span> that a router uses when no more specific route matches — it sends unmatched traffic toward a single next-hop, typically the WAN or edge.</p></div><div class="concept-card"><h4>How is a static route written?</h4><p><span class="mono-cell">ip route &lt;destination-network&gt; &lt;subnet-mask&gt; &lt;next-hop&gt;</span> — it tells the router that traffic for that network should be forwarded to the next-hop address given.</p></div></div>
+</div>
+
+                <div class="doc-section" id="m2-topology">
+    <div class="doc-section-head"><span class="doc-num">04</span><h2>Topology</h2></div>
+    <div class="topology-figure">
+        <div>
+            <div class="topology-img-frame" data-lightbox-src="module2-topology.png" data-lightbox-caption="Module 2 — actual Packet Tracer topology showing the three department blocks connected through R1, R2 and R3."><img src="module2-topology.png" alt="Module 2 — actual Packet Tracer topology showing the three department blocks connected through R1, R2 and R3." onerror="this.closest('.topology-img-frame').outerHTML='&lt;div class=&quot;asset-missing&quot;&gt;&lt;span class=&quot;am-icon&quot;&gt;\u26a0&lt;/span&gt;Asset not found: &lt;code&gt;module2-topology.png&lt;/code&gt;&lt;/div&gt;'"></div>
+            <p class="figure-caption">Fig. 1 — Module 2 — actual Packet Tracer topology showing the three department blocks connected through R1, R2 and R3.</p>
+        </div>
+        <div class="topology-notes">
+            <p style="font-size:13px; color:var(--text-muted); margin-bottom:12px;">Role of each device:</p>
+            <ul><li><strong>R1, R2, R3</strong> — three routers connecting the campus blocks and carrying the static routes between them.</li><li><strong>Administration, Computer Science, Library</strong> — three department LANs, each subnetted to its own VLSM block.</li><li><strong>PC0, PC1, PC2</strong> — representative end devices, one per department block, used to verify reachability.</li></ul>
+            <p style="font-size:13px; color:var(--text-muted); margin-top:14px;">The R1–R2 and R2–R3 links are dedicated /30 point-to-point networks between the routers. Static routes on each router point toward the remote department blocks through the appropriate router link.</p>
+        </div>
+    </div>
+    
+</div>
+
+                <div class="doc-section" id="m2-addressing">
+    <div class="doc-section-head"><span class="doc-num">05</span><h2>Devices &amp; Addressing</h2></div>
+    <p style="font-size:12.5px; color:var(--text-faint); margin-bottom:8px; text-transform:uppercase; letter-spacing:.05em; font-weight:600;">VLSM allocation</p><div class="table-scroll" style="margin-bottom:20px;"><table class="data-table"><thead><tr><th>Purpose</th><th>Network</th><th>Prefix</th><th>Usable hosts</th></tr></thead><tbody><tr><td>Administration</td><td class="mono-cell">192.168.50.0</td><td class="mono-cell">/26</td><td>62</td></tr><tr><td>Computer Science</td><td class="mono-cell">192.168.50.64</td><td class="mono-cell">/27</td><td>30</td></tr><tr><td>Library</td><td class="mono-cell">192.168.50.96</td><td class="mono-cell">/28</td><td>14</td></tr><tr><td>R1–R2 link</td><td class="mono-cell">192.168.50.112</td><td class="mono-cell">/30</td><td>2</td></tr><tr><td>R2–R3 link</td><td class="mono-cell">192.168.50.116</td><td class="mono-cell">/30</td><td>2</td></tr></tbody></table></div><p style="font-size:12.5px; color:var(--text-faint); margin-bottom:8px; text-transform:uppercase; letter-spacing:.05em; font-weight:600;">End-device addressing</p><div class="table-scroll"><table class="data-table"><thead><tr><th>Device</th><th>IP Address</th><th>Subnet Mask</th></tr></thead><tbody><tr><td>PC0 (Administration)</td><td class="mono-cell">192.168.50.2</td><td class="mono-cell">255.255.255.192</td></tr><tr><td>PC1 (Computer Science)</td><td class="mono-cell">192.168.50.66</td><td class="mono-cell">255.255.255.224</td></tr><tr><td>PC2 (Library)</td><td class="mono-cell">192.168.50.98</td><td class="mono-cell">255.255.255.240</td></tr></tbody></table></div>
+</div>
+
+                <div class="doc-section" id="m2-configuration">
+    <div class="doc-section-head"><span class="doc-num">06</span><h2>Configuration</h2></div>
+    <p class="note-box" style="margin-bottom:16px;">There is no routing-configuration screenshot for this module — the static routes below are shown as documented configuration, not as evidence captured from the running router.</p>
+    <div class="config-steps" id="configSteps-m2"></div>
+    <p class="note-box" style="margin-top:16px;">The corresponding static routes on the other routers follow the same pattern documented in the source material — each router is given a route to the remote blocks it does not directly connect to, through the correct router-to-router next-hop. Exact additional route lines beyond the two above were not included in the supplied evidence, so they are not reproduced here to avoid inventing CLI that was not documented.</p>
+</div>
+
+                <div class="doc-section" id="m2-commands">
+        <div class="doc-section-head"><span class="doc-num">07</span><h2>Verification Commands</h2></div>
+        <div class="cmd-ref-list" id="cmdRefList-m2"></div>
+    </div>
+
+                <div class="doc-section" id="m2-video">
+    <div class="doc-section-head"><span class="doc-num">08</span><h2>Experiment Video</h2></div>
+    <div class="doc-card" style="padding-bottom:18px;">
+        <p style="margin-bottom:14px;">Module 2 — Experiment Walkthrough. Subnetting the 192.168.50.0/24 block with VLSM, addressing each department block, and configuring the static routes between routers.</p>
+        <div class="video-wrap">
+            <video controls preload="metadata" playsinline data-expect="module2-experiment-walkthrough.mp4">
+                <source src="module2-experiment-walkthrough.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</div>
+
+                <div class="doc-section" id="m2-screenshots">
+    <div class="doc-section-head"><span class="doc-num">09</span><h2>Screenshots</h2></div>
+    <div id="galleryWrap-m2"></div>
+</div>
+
+                <div class="doc-section" id="m2-verification">
+    <div class="doc-section-head"><span class="doc-num">10</span><h2>Verification</h2></div>
+    <div class="verify-grid"><div class="verify-card"><h4>Routing Table — <span class="mono-cell" style="font-size:12px;">show ip route</span></h4><div class="verify-img-frame" data-lightbox-src="module2-routing-table.png" data-lightbox-caption="Routing table showing the configured static routes."><img src="module2-routing-table.png" alt="Routing table showing the configured static routes." onerror="this.closest('.verify-img-frame').outerHTML='&lt;div class=&quot;asset-missing&quot;&gt;&lt;span class=&quot;am-icon&quot;&gt;\u26a0&lt;/span&gt;Asset not found: &lt;code&gt;module2-routing-table.png&lt;/code&gt;&lt;/div&gt;'"></div><p>The routing table shows the static (<span class="mono-cell">S</span>) routes to the Computer Science and Library blocks alongside the directly connected networks. Exact entries are as shown in the screenshot; nothing here is invented beyond it.</p></div><div class="verify-card"><h4>Connectivity Verification</h4><div class="verify-img-frame" data-lightbox-src="module2-connectivity-verification.png" data-lightbox-caption="Ping results confirming reachability between department blocks."><img src="module2-connectivity-verification.png" alt="Ping results confirming reachability between department blocks." onerror="this.closest('.verify-img-frame').outerHTML='&lt;div class=&quot;asset-missing&quot;&gt;&lt;span class=&quot;am-icon&quot;&gt;\u26a0&lt;/span&gt;Asset not found: &lt;code&gt;module2-connectivity-verification.png&lt;/code&gt;&lt;/div&gt;'"></div><p>Documented checks: <span class="mono-cell">ping 192.168.50.66</span> and <span class="mono-cell">ping 192.168.50.98</span> from the Administration block, confirming the static routes provide working end-to-end reachability.</p></div></div>
+</div>
+
+                <div class="doc-section" id="m2-download">
+    <div class="doc-section-head"><span class="doc-num">11</span><h2>Packet Tracer File</h2></div>
+    <div class="pkt-card">
+        <div class="pkt-icon">⤓</div>
+        <div class="pkt-info">
+            <h4>module2.pkt</h4>
+            <p>Packet Tracer file for the Module 2 VLSM and static/default routing experiment.</p>
+        </div>
+        <a class="btn btn-primary" href="module2.pkt" download>Download .pkt</a>
+    </div>
+</div>
+
+                <div class="doc-section" id="m2-result" style="margin-bottom:10px;">
+    <div class="doc-section-head"><span class="doc-num">12</span><h2>Result</h2></div>
+    <div class="result-card">
+        <div class="result-icon">✓</div>
+        <p>Module 2 subnetted a single /24 block into three right-sized department networks using VLSM — a /26 for Administration, a /27 for Computer Science and a /28 for Library — and connected them across three routers using static routes, verified with successful pings between blocks.</p>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= RIP VERSION 1 AND RIP VERSION 2 ================= -->
+    <section class="view" id="view-module-3" hidden>
+        <div class="module-page">
+
+            <nav class="module-toc" id="m3Toc">
+<a href="#m3-overview" class="active"><span class="toc-num">01</span> Overview</a>
+<a href="#m3-objective"><span class="toc-num">02</span> Objective</a>
+<a href="#m3-concepts"><span class="toc-num">03</span> Concepts / Technologies</a>
+<a href="#m3-topology"><span class="toc-num">04</span> Topology</a>
+<a href="#m3-addressing"><span class="toc-num">05</span> Devices &amp; Addressing</a>
+<a href="#m3-configuration"><span class="toc-num">06</span> Configuration</a>
+<a href="#m3-commands"><span class="toc-num">07</span> Verification Commands</a>
+<a href="#m3-video"><span class="toc-num">08</span> Experiment Video</a>
+<a href="#m3-screenshots"><span class="toc-num">09</span> Screenshots</a>
+<a href="#m3-verification"><span class="toc-num">10</span> Verification</a>
+<a href="#m3-download"><span class="toc-num">11</span> Packet Tracer File</a>
+<a href="#m3-result"><span class="toc-num">12</span> Result</a>
+</nav>
+
+            <div class="module-body">
+
+                <div class="module-hero">
+                    <p class="small-label">Module 3</p>
+                    <h1>RIP Version 1 and RIP Version 2</h1>
+                    <p>Route dynamically across three routers using distance-vector RIP, and compare classful RIPv1 with classless RIPv2.</p>
+                    <div class="module-hero-topics"><span class="chip">RIPv1</span><span class="chip">RIPv2</span><span class="chip">Distance Vector</span><span class="chip">Auto-summary</span></div>
+                </div>
+
+                <div class="doc-section" id="m3-overview">
+    <div class="doc-section-head"><span class="doc-num">01</span><h2>Overview</h2></div>
+    <div class="doc-card"><p>Module 3 replaces manual static routes with a dynamic distance-vector protocol: RIP. The same three-router chain is first routed with RIP version 1, then reconfigured with RIP version 2 to compare behaviour.</p><p>The key contrast is that RIPv1 is classful and always auto-summarizes at network boundaries, while RIPv2 is classless and supports disabling auto-summary with <span class="mono-cell">no auto-summary</span>, allowing it to carry subnet mask information properly.</p></div>
+</div>
+
+                <div class="doc-section" id="m3-objective">
+    <div class="doc-section-head"><span class="doc-num">02</span><h2>Objective</h2></div>
+    <div class="doc-card"><p>Configure RIP version 1 across R1–R2–R3, verify routing, then migrate the same topology to RIP version 2 with auto-summary disabled, and confirm connectivity between LAN-A and LAN-C in both cases.</p></div>
+</div>
+
+                <div class="doc-section" id="m3-concepts">
+    <div class="doc-section-head"><span class="doc-num">03</span><h2>Concepts / Technologies</h2></div>
+    <div class="concept-grid"><div class="concept-card"><h4>What is RIP?</h4><p>Routing Information Protocol — a distance-vector routing protocol that chooses paths based on hop count, with a maximum of 15 hops.</p></div><div class="concept-card"><h4>What is a distance-vector protocol?</h4><p>A routing protocol where each router shares its whole routing table with directly connected neighbours, and picks the path with the lowest metric (hop count for RIP).</p></div><div class="concept-card"><h4>RIPv1 vs RIPv2 — what changed?</h4><p>RIPv1 is classful and does not carry subnet mask information, so it always auto-summarizes at classful network boundaries. RIPv2 is classless, carries the subnet mask with each route, and supports VLSM.</p></div><div class="concept-card"><h4>What does “no auto-summary” do?</h4><p>Disables automatic summarization of routes at classful network boundaries in RIPv2, so specific subnetted routes are advertised instead of being collapsed into one summary route.</p></div></div>
+</div>
+
+                <div class="doc-section" id="m3-topology">
+    <div class="doc-section-head"><span class="doc-num">04</span><h2>Topology</h2></div>
+    <div class="topology-figure">
+        <div>
+            <div class="topology-img-frame" data-lightbox-src="module3-topology.png" data-lightbox-caption="Module 3 — actual Packet Tracer topology: LAN-A, R1, R2, R3 and LAN-C connected in a chain."><img src="module3-topology.png" alt="Module 3 — actual Packet Tracer topology: LAN-A, R1, R2, R3 and LAN-C connected in a chain." onerror="this.closest('.topology-img-frame').outerHTML='&lt;div class=&quot;asset-missing&quot;&gt;&lt;span class=&quot;am-icon&quot;&gt;\u26a0&lt;/span&gt;Asset not found: &lt;code&gt;module3-topology.png&lt;/code&gt;&lt;/div&gt;'"></div>
+            <p class="figure-caption">Fig. 1 — Module 3 — actual Packet Tracer topology: LAN-A, R1, R2, R3 and LAN-C connected in a chain.</p>
+        </div>
+        <div class="topology-notes">
+            <p style="font-size:13px; color:var(--text-muted); margin-bottom:12px;">Role of each device:</p>
+            <ul><li><strong>R1</strong> — connects LAN-A to the R1–R2 link.</li><li><strong>R2</strong> — the middle router, connecting the R1–R2 and R2–R3 links.</li><li><strong>R3</strong> — connects the R2–R3 link to LAN-C.</li></ul>
+            <p style="font-size:13px; color:var(--text-muted); margin-top:14px;">LAN-A and LAN-C sit at opposite ends of the chain, so traffic between them must be routed dynamically across both point-to-point links.</p>
+        </div>
+    </div>
+    
+</div>
+
+                <div class="doc-section" id="m3-addressing">
+    <div class="doc-section-head"><span class="doc-num">05</span><h2>Devices &amp; Addressing</h2></div>
+    <p style="font-size:12.5px; color:var(--text-faint); margin-bottom:8px; text-transform:uppercase; letter-spacing:.05em; font-weight:600;">Network addressing</p><div class="table-scroll" style="margin-bottom:20px;"><table class="data-table"><thead><tr><th>Segment</th><th>Network</th></tr></thead><tbody><tr><td>LAN-A</td><td class="mono-cell">192.168.10.0/24</td></tr><tr><td>R1–R2 link</td><td class="mono-cell">10.0.0.0/30</td></tr><tr><td>R2–R3 link</td><td class="mono-cell">10.0.0.4/30</td></tr><tr><td>LAN-C</td><td class="mono-cell">192.168.20.0/24</td></tr></tbody></table></div>
+</div>
+
+                <div class="doc-section" id="m3-configuration">
+    <div class="doc-section-head"><span class="doc-num">06</span><h2>Configuration</h2></div>
+    
+    <div class="config-steps" id="configSteps-m3"></div>
+    
+</div>
+
+                <div class="doc-section" id="m3-commands">
+        <div class="doc-section-head"><span class="doc-num">07</span><h2>Verification Commands</h2></div>
+        <div class="cmd-ref-list" id="cmdRefList-m3"></div>
+    </div>
+
+                <div class="doc-section" id="m3-video">
+    <div class="doc-section-head"><span class="doc-num">08</span><h2>Experiment Video</h2></div>
+    <div class="doc-card" style="padding-bottom:18px;">
+        <p style="margin-bottom:14px;">Module 3 — Experiment Walkthrough. Configuring RIPv1, verifying it, then migrating to RIPv2 with auto-summary disabled.</p>
+        <div class="video-wrap">
+            <video controls preload="metadata" playsinline data-expect="module3-experiment-walkthrough.mp4">
+                <source src="module3-experiment-walkthrough.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</div>
+
+                <div class="doc-section" id="m3-screenshots">
+    <div class="doc-section-head"><span class="doc-num">09</span><h2>Screenshots</h2></div>
+    <div id="galleryWrap-m3"></div>
+</div>
+
+                <div class="doc-section" id="m3-verification">
+    <div class="doc-section-head"><span class="doc-num">10</span><h2>Verification</h2></div>
+    <div class="verify-grid"><div class="verify-card"><h4>RIP v1 Verification — <span class="mono-cell" style="font-size:12px;">show ip route / show ip protocols</span></h4><div class="verify-img-frame" data-lightbox-src="module3-rip-v1-verification.png" data-lightbox-caption="RIPv1 routing table and protocol state."><img src="module3-rip-v1-verification.png" alt="RIPv1 routing table and protocol state." onerror="this.closest('.verify-img-frame').outerHTML='&lt;div class=&quot;asset-missing&quot;&gt;&lt;span class=&quot;am-icon&quot;&gt;\u26a0&lt;/span&gt;Asset not found: &lt;code&gt;module3-rip-v1-verification.png&lt;/code&gt;&lt;/div&gt;'"></div><p>Confirms RIP version 1 is active and that R-learned routes to the remote LAN are present, exactly as captured in the screenshot.</p></div><div class="verify-card"><h4>RIP v2 Verification — <span class="mono-cell" style="font-size:12px;">show ip route / show ip protocols</span></h4><div class="verify-img-frame" data-lightbox-src="module3-rip-v2-verification.png" data-lightbox-caption="RIPv2 routing table and protocol state, after enabling version 2 and disabling auto-summary."><img src="module3-rip-v2-verification.png" alt="RIPv2 routing table and protocol state, after enabling version 2 and disabling auto-summary." onerror="this.closest('.verify-img-frame').outerHTML='&lt;div class=&quot;asset-missing&quot;&gt;&lt;span class=&quot;am-icon&quot;&gt;\u26a0&lt;/span&gt;Asset not found: &lt;code&gt;module3-rip-v2-verification.png&lt;/code&gt;&lt;/div&gt;'"></div><p>Confirms the router is running RIP version 2 with auto-summary disabled, and that subnetted routes are visible individually rather than summarized.</p></div><div class="verify-card"><h4>Connectivity Verification</h4><div class="verify-img-frame" data-lightbox-src="module3-connectivity-verification.png" data-lightbox-caption="Ping / traceroute results between LAN-A and LAN-C."><img src="module3-connectivity-verification.png" alt="Ping / traceroute results between LAN-A and LAN-C." onerror="this.closest('.verify-img-frame').outerHTML='&lt;div class=&quot;asset-missing&quot;&gt;&lt;span class=&quot;am-icon&quot;&gt;\u26a0&lt;/span&gt;Asset not found: &lt;code&gt;module3-connectivity-verification.png&lt;/code&gt;&lt;/div&gt;'"></div><p>Documented checks: <span class="mono-cell">ping 192.168.20.10</span> and <span class="mono-cell">traceroute 192.168.20.10</span>, confirming RIP successfully routes between the two LANs.</p></div></div>
+</div>
+
+                <div class="doc-section" id="m3-download">
+    <div class="doc-section-head"><span class="doc-num">11</span><h2>Packet Tracer File</h2></div>
+    <div class="pkt-card">
+        <div class="pkt-icon">⤓</div>
+        <div class="pkt-info">
+            <h4>module3.pkt</h4>
+            <p>Packet Tracer file for the Module 3 RIPv1 / RIPv2 experiment.</p>
+        </div>
+        <a class="btn btn-primary" href="module3.pkt" download>Download .pkt</a>
+    </div>
+</div>
+
+                <div class="doc-section" id="m3-result" style="margin-bottom:10px;">
+    <div class="doc-section-head"><span class="doc-num">12</span><h2>Result</h2></div>
+    <div class="result-card">
+        <div class="result-icon">✓</div>
+        <p>Module 3 routed LAN-A to LAN-C dynamically across a three-router chain using RIP, first with classful RIPv1 and then with classless RIPv2 with auto-summary disabled, with connectivity verified under both versions.</p>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= SINGLE-AREA OSPF ================= -->
+    <section class="view" id="view-module-4a" hidden>
+        <div class="module-page">
+
+            <nav class="module-toc" id="m4aToc">
+<a href="#m4a-overview" class="active"><span class="toc-num">01</span> Overview</a>
+<a href="#m4a-objective"><span class="toc-num">02</span> Objective</a>
+<a href="#m4a-concepts"><span class="toc-num">03</span> Concepts / Technologies</a>
+<a href="#m4a-topology"><span class="toc-num">04</span> Topology</a>
+<a href="#m4a-addressing"><span class="toc-num">05</span> Devices &amp; Addressing</a>
+<a href="#m4a-configuration"><span class="toc-num">06</span> Configuration</a>
+<a href="#m4a-commands"><span class="toc-num">07</span> Verification Commands</a>
+<a href="#m4a-video"><span class="toc-num">08</span> Experiment Video</a>
+<a href="#m4a-screenshots"><span class="toc-num">09</span> Screenshots</a>
+<a href="#m4a-verification"><span class="toc-num">10</span> Verification</a>
+<a href="#m4a-download"><span class="toc-num">11</span> Packet Tracer File</a>
+<a href="#m4a-result"><span class="toc-num">12</span> Result</a>
+</nav>
+
+            <div class="module-body">
+
+                <div class="module-hero">
+                    <p class="small-label">Module 4A</p>
+                    <h1>Single-Area OSPF</h1>
+                    <p>Implement OSPF Area 0 across a three-router campus, replacing distance-vector routing with a link-state protocol.</p>
+                    <div class="module-hero-topics"><span class="chip">OSPF</span><span class="chip">Area 0</span><span class="chip">Router-ID</span><span class="chip">Link-State</span></div>
+                </div>
+
+                <div class="doc-section" id="m4a-overview">
+    <div class="doc-section-head"><span class="doc-num">01</span><h2>Overview</h2></div>
+    <div class="doc-card"><p>Module 4A implements Open Shortest Path First (OSPF) across three routers, each contributing one LAN, all placed in a single area — Area 0, the OSPF backbone.</p><p>Unlike RIP, OSPF is a link-state protocol: routers form neighbour adjacencies, exchange link-state information, and each independently calculates the shortest path using Dijkstra's algorithm rather than counting hops.</p></div>
+</div>
+
+                <div class="doc-section" id="m4a-objective">
+    <div class="doc-section-head"><span class="doc-num">02</span><h2>Objective</h2></div>
+    <div class="doc-card"><p>Implement OSPF Area 0 for a small campus of three routers and three LANs, form OSPF neighbour adjacencies across every router link, and verify full reachability between all three LANs.</p></div>
+</div>
+
+                <div class="doc-section" id="m4a-concepts">
+    <div class="doc-section-head"><span class="doc-num">03</span><h2>Concepts / Technologies</h2></div>
+    <div class="concept-grid"><div class="concept-card"><h4>What is OSPF?</h4><p>Open Shortest Path First — a link-state routing protocol that builds a full map of the network topology and calculates the shortest path to each destination.</p></div><div class="concept-card"><h4>What is a router-id?</h4><p>A 32-bit value, usually written like an IP address, that uniquely identifies a router within an OSPF domain.</p></div><div class="concept-card"><h4>What is Area 0?</h4><p>The OSPF backbone area. In a single-area design, every router and network belongs to Area 0.</p></div><div class="concept-card"><h4>What does the wildcard mask in the network command mean?</h4><p>OSPF's <span class="mono-cell">network</span> command uses a wildcard (inverse) mask, not a subnet mask — <span class="mono-cell">0.0.0.255</span> matches any host bits, mirroring a /24 network.</p></div><div class="concept-card"><h4>What is an OSPF neighbour adjacency?</h4><p>A relationship formed between two directly connected OSPF routers after they exchange Hello packets and agree on parameters, allowing them to exchange link-state information.</p></div></div>
+</div>
+
+                <div class="doc-section" id="m4a-topology">
+    <div class="doc-section-head"><span class="doc-num">04</span><h2>Topology</h2></div>
+    <div class="topology-figure">
+        <div>
+            <div class="topology-img-frame" data-lightbox-src="module4a-topology.png" data-lightbox-caption="Module 4A — actual Packet Tracer topology: R1, R2, R3 fully meshed, each with its own LAN, all in Area 0."><img src="module4a-topology.png" alt="Module 4A — actual Packet Tracer topology: R1, R2, R3 fully meshed, each with its own LAN, all in Area 0." onerror="this.closest('.topology-img-frame').outerHTML='&lt;div class=&quot;asset-missing&quot;&gt;&lt;span class=&quot;am-icon&quot;&gt;\u26a0&lt;/span&gt;Asset not found: &lt;code&gt;module4a-topology.png&lt;/code&gt;&lt;/div&gt;'"></div>
+            <p class="figure-caption">Fig. 1 — Module 4A — actual Packet Tracer topology: R1, R2, R3 fully meshed, each with its own LAN, all in Area 0.</p>
+        </div>
+        <div class="topology-notes">
+            <p style="font-size:13px; color:var(--text-muted); margin-bottom:12px;">Role of each device:</p>
+            <ul><li><strong>R1</strong> — router-id 1.1.1.1, connects LAN1 (192.168.10.0/24) into Area 0.</li><li><strong>R2</strong> — router-id 2.2.2.2, connects LAN2 (192.168.20.0/24) into Area 0.</li><li><strong>R3</strong> — router-id 3.3.3.3, connects LAN3 (192.168.30.0/24) into Area 0.</li></ul>
+            <p style="font-size:13px; color:var(--text-muted); margin-top:14px;">R1, R2 and R3 are interconnected by three /30 point-to-point links, all part of Area 0, giving every router a direct OSPF adjacency with the other two.</p>
+        </div>
+    </div>
+    
+</div>
+
+                <div class="doc-section" id="m4a-addressing">
+    <div class="doc-section-head"><span class="doc-num">05</span><h2>Devices &amp; Addressing</h2></div>
+    <p style="font-size:12.5px; color:var(--text-faint); margin-bottom:8px; text-transform:uppercase; letter-spacing:.05em; font-weight:600;">Network addressing</p><div class="table-scroll" style="margin-bottom:20px;"><table class="data-table"><thead><tr><th>Segment</th><th>Network</th></tr></thead><tbody><tr><td>LAN1</td><td class="mono-cell">192.168.10.0/24</td></tr><tr><td>LAN2</td><td class="mono-cell">192.168.20.0/24</td></tr><tr><td>LAN3</td><td class="mono-cell">192.168.30.0/24</td></tr><tr><td>R1–R2 link</td><td class="mono-cell">10.0.0.0/30</td></tr><tr><td>R1–R3 link</td><td class="mono-cell">10.0.0.4/30</td></tr><tr><td>R2–R3 link</td><td class="mono-cell">10.0.0.8/30</td></tr></tbody></table></div>
+</div>
+
+                <div class="doc-section" id="m4a-configuration">
+    <div class="doc-section-head"><span class="doc-num">06</span><h2>Configuration</h2></div>
+    
+    <div class="config-steps" id="configSteps-m4a"></div>
+    
+</div>
+
+                <div class="doc-section" id="m4a-commands">
+        <div class="doc-section-head"><span class="doc-num">07</span><h2>Verification Commands</h2></div>
+        <div class="cmd-ref-list" id="cmdRefList-m4a"></div>
+    </div>
+
+                <div class="doc-section" id="m4a-video">
+    <div class="doc-section-head"><span class="doc-num">08</span><h2>Experiment Video</h2></div>
+    <div class="doc-card" style="padding-bottom:18px;">
+        <p style="margin-bottom:14px;">Module 4A — Experiment Walkthrough. Configuring OSPF Area 0 on R1, R2 and R3, and verifying neighbour adjacencies and connectivity.</p>
+        <div class="video-wrap">
+            <video controls preload="metadata" playsinline data-expect="module4a-experiment-walkthrough.mp4">
+                <source src="module4a-experiment-walkthrough.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</div>
+
+                <div class="doc-section" id="m4a-screenshots">
+    <div class="doc-section-head"><span class="doc-num">09</span><h2>Screenshots</h2></div>
+    <div id="galleryWrap-m4a"></div>
+</div>
+
+                <div class="doc-section" id="m4a-verification">
+    <div class="doc-section-head"><span class="doc-num">10</span><h2>Verification</h2></div>
+    <div class="verify-grid"><div class="verify-card"><h4>R1 — OSPF Neighbor Verification — <span class="mono-cell" style="font-size:12px;">show ip ospf neighbor</span></h4><div class="verify-img-frame" data-lightbox-src="module4a-r1-ospf-configuration.png" data-lightbox-caption="R1’s OSPF neighbor table."><img src="module4a-r1-ospf-configuration.png" alt="R1’s OSPF neighbor table." onerror="this.closest('.verify-img-frame').outerHTML='&lt;div class=&quot;asset-missing&quot;&gt;&lt;span class=&quot;am-icon&quot;&gt;\u26a0&lt;/span&gt;Asset not found: &lt;code&gt;module4a-r1-ospf-configuration.png&lt;/code&gt;&lt;/div&gt;'"></div><p><strong>Note:</strong> this screenshot shows the output of <span class="mono-cell">show ip ospf neighbor</span> on R1 — it is a neighbor-verification capture, not a configuration screenshot, and is labelled accordingly here.</p></div><div class="verify-card"><h4>R2 — OSPF Neighbor Verification — <span class="mono-cell" style="font-size:12px;">show ip ospf neighbor</span></h4><div class="verify-img-frame" data-lightbox-src="module4a-r2-ospf-configuration.png" data-lightbox-caption="R2’s OSPF neighbor table."><img src="module4a-r2-ospf-configuration.png" alt="R2’s OSPF neighbor table." onerror="this.closest('.verify-img-frame').outerHTML='&lt;div class=&quot;asset-missing&quot;&gt;&lt;span class=&quot;am-icon&quot;&gt;\u26a0&lt;/span&gt;Asset not found: &lt;code&gt;module4a-r2-ospf-configuration.png&lt;/code&gt;&lt;/div&gt;'"></div><p>Shows R2’s adjacencies with R1 and R3, confirming OSPF has converged across both of R2’s router links.</p></div><div class="verify-card"><h4>R3 — OSPF Neighbor Verification — <span class="mono-cell" style="font-size:12px;">show ip ospf neighbor</span></h4><div class="verify-img-frame" data-lightbox-src="module4a-r3-ospf-configuration.png" data-lightbox-caption="R3’s OSPF neighbor table."><img src="module4a-r3-ospf-configuration.png" alt="R3’s OSPF neighbor table." onerror="this.closest('.verify-img-frame').outerHTML='&lt;div class=&quot;asset-missing&quot;&gt;&lt;span class=&quot;am-icon&quot;&gt;\u26a0&lt;/span&gt;Asset not found: &lt;code&gt;module4a-r3-ospf-configuration.png&lt;/code&gt;&lt;/div&gt;'"></div><p>Shows R3’s adjacencies with R1 and R2, completing the full mesh of OSPF neighbour relationships.</p></div><div class="verify-card"><h4>Routing Table — <span class="mono-cell" style="font-size:12px;">show ip route</span></h4><div class="verify-img-frame" data-lightbox-src="module4a-routing-table.png" data-lightbox-caption="Routing table showing OSPF-learned routes to the remote LANs."><img src="module4a-routing-table.png" alt="Routing table showing OSPF-learned routes to the remote LANs." onerror="this.closest('.verify-img-frame').outerHTML='&lt;div class=&quot;asset-missing&quot;&gt;&lt;span class=&quot;am-icon&quot;&gt;\u26a0&lt;/span&gt;Asset not found: &lt;code&gt;module4a-routing-table.png&lt;/code&gt;&lt;/div&gt;'"></div><p>OSPF (<span class="mono-cell">O</span>) routes to LAN2 and LAN3 appear alongside the directly connected LAN1, exactly as shown in the capture.</p></div><div class="verify-card"><h4>Connectivity Verification</h4><div class="verify-img-frame" data-lightbox-src="module4a-connectivity-verification.png" data-lightbox-caption="Ping results confirming reachability across all three LANs."><img src="module4a-connectivity-verification.png" alt="Ping results confirming reachability across all three LANs." onerror="this.closest('.verify-img-frame').outerHTML='&lt;div class=&quot;asset-missing&quot;&gt;&lt;span class=&quot;am-icon&quot;&gt;\u26a0&lt;/span&gt;Asset not found: &lt;code&gt;module4a-connectivity-verification.png&lt;/code&gt;&lt;/div&gt;'"></div><p>Documented check: <span class="mono-cell">ping 192.168.30.10</span>, confirming OSPF successfully routes traffic to LAN3.</p></div></div>
+</div>
+
+                <div class="doc-section" id="m4a-download">
+    <div class="doc-section-head"><span class="doc-num">11</span><h2>Packet Tracer File</h2></div>
+    <div class="pkt-card">
+        <div class="pkt-icon">⤓</div>
+        <div class="pkt-info">
+            <h4>module4a.pkt</h4>
+            <p>Packet Tracer file for the Module 4A single-area OSPF experiment.</p>
+        </div>
+        <a class="btn btn-primary" href="module4a.pkt" download>Download .pkt</a>
+    </div>
+</div>
+
+                <div class="doc-section" id="m4a-result" style="margin-bottom:10px;">
+    <div class="doc-section-head"><span class="doc-num">12</span><h2>Result</h2></div>
+    <div class="result-card">
+        <div class="result-icon">✓</div>
+        <p>Module 4A brought up OSPF Area 0 across R1, R2 and R3, with full neighbour adjacencies confirmed on every router link and end-to-end reachability verified between all three LANs.</p>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= MULTI-AREA OSPF ================= -->
+    <section class="view" id="view-module-4b" hidden>
+        <div class="module-page">
+
+            <nav class="module-toc" id="m4bToc">
+<a href="#m4b-overview" class="active"><span class="toc-num">01</span> Overview</a>
+<a href="#m4b-objective"><span class="toc-num">02</span> Objective</a>
+<a href="#m4b-concepts"><span class="toc-num">03</span> Concepts / Technologies</a>
+<a href="#m4b-topology"><span class="toc-num">04</span> Topology</a>
+<a href="#m4b-addressing"><span class="toc-num">05</span> Devices &amp; Addressing</a>
+<a href="#m4b-configuration"><span class="toc-num">06</span> Configuration</a>
+<a href="#m4b-commands"><span class="toc-num">07</span> Verification Commands</a>
+<a href="#m4b-video"><span class="toc-num">08</span> Experiment Video</a>
+<a href="#m4b-screenshots"><span class="toc-num">09</span> Screenshots</a>
+<a href="#m4b-verification"><span class="toc-num">10</span> Verification</a>
+<a href="#m4b-download"><span class="toc-num">11</span> Packet Tracer File</a>
+<a href="#m4b-result"><span class="toc-num">12</span> Result</a>
+</nav>
+
+            <div class="module-body">
+
+                <div class="module-hero">
+                    <p class="small-label">Module 4B</p>
+                    <h1>Multi-Area OSPF</h1>
+                    <p>Extend single-area OSPF into three areas — Area 1, the Area 0 backbone, and Area 2 — connected through two ABRs.</p>
+                    <div class="module-hero-topics"><span class="chip">OSPF</span><span class="chip">Multi-Area</span><span class="chip">ABR</span><span class="chip">Backbone Area</span></div>
+                </div>
+
+                <div class="doc-section" id="m4b-overview">
+    <div class="doc-section-head"><span class="doc-num">01</span><h2>Overview</h2></div>
+    <div class="doc-card"><p>Module 4B extends the single-area design of Module 4A into a multi-area OSPF network. Instead of one flat Area 0, the topology is split into Area 1, the Area 0 backbone, and Area 2, connected in a line: R1 — R2 — R3 — R4.</p><p>R2 and R3 act as Area Border Routers (ABRs), each with one interface in Area 0 and one interface in a non-backbone area, connecting Area 1 and Area 2 to the backbone.</p></div>
+</div>
+
+                <div class="doc-section" id="m4b-objective">
+    <div class="doc-section-head"><span class="doc-num">02</span><h2>Objective</h2></div>
+    <div class="doc-card"><p>Extend OSPF into a multi-area design — Area 1 (R1, LAN-A) → Area 0 backbone (R2 – R3) → Area 2 (R4, LAN-D) — with R2 and R3 as ABRs, and verify reachability from LAN-A to LAN-D across all three areas.</p></div>
+</div>
+
+                <div class="doc-section" id="m4b-concepts">
+    <div class="doc-section-head"><span class="doc-num">03</span><h2>Concepts / Technologies</h2></div>
+    <div class="concept-grid"><div class="concept-card"><h4>Why use multiple OSPF areas?</h4><p>Splitting a large OSPF domain into areas limits how far link-state changes propagate, reducing SPF recalculation load and keeping routing tables smaller in each area.</p></div><div class="concept-card"><h4>What is the backbone area?</h4><p>Area 0 — every other area in an OSPF design must connect to it, directly or through a virtual link, so that inter-area traffic always passes through the backbone.</p></div><div class="concept-card"><h4>What is an ABR?</h4><p>Area Border Router — a router with interfaces in two or more OSPF areas, one of which must be Area 0. It summarizes and passes routing information between areas.</p></div><div class="concept-card"><h4>How does traffic get from Area 1 to Area 2?</h4><p>It must cross the backbone: Area 1 → Area 0 → Area 2, entering and leaving the backbone through the two ABRs, R2 and R3.</p></div></div>
+</div>
+
+                <div class="doc-section" id="m4b-topology">
+    <div class="doc-section-head"><span class="doc-num">04</span><h2>Topology</h2></div>
+    <div class="topology-figure">
+        <div>
+            <div class="topology-img-frame" data-lightbox-src="module4b-topology.png" data-lightbox-caption="Module 4B — actual Packet Tracer topology: R1 (Area 1) — R2 — R3 (Area 0 backbone) — R4 (Area 2)."><img src="module4b-topology.png" alt="Module 4B — actual Packet Tracer topology: R1 (Area 1) — R2 — R3 (Area 0 backbone) — R4 (Area 2)." onerror="this.closest('.topology-img-frame').outerHTML='&lt;div class=&quot;asset-missing&quot;&gt;&lt;span class=&quot;am-icon&quot;&gt;\u26a0&lt;/span&gt;Asset not found: &lt;code&gt;module4b-topology.png&lt;/code&gt;&lt;/div&gt;'"></div>
+            <p class="figure-caption">Fig. 1 — Module 4B — actual Packet Tracer topology: R1 (Area 1) — R2 — R3 (Area 0 backbone) — R4 (Area 2).</p>
+        </div>
+        <div class="topology-notes">
+            <p style="font-size:13px; color:var(--text-muted); margin-bottom:12px;">Role of each device:</p>
+            <ul><li><strong>R1</strong> — router-id 1.1.1.1, in Area 1 with LAN-A attached.</li><li><strong>R2</strong> — router-id 2.2.2.2, ABR connecting Area 1 to the Area 0 backbone.</li><li><strong>R3</strong> — router-id 3.3.3.3, ABR connecting the Area 0 backbone to Area 2.</li><li><strong>R4</strong> — router-id 4.4.4.4, in Area 2 with LAN-D attached.</li></ul>
+            <p style="font-size:13px; color:var(--text-muted); margin-top:14px;">R2 and R3 both sit on the R2–R3 backbone link in Area 0. R1–R2 belongs to Area 1, and R3–R4 belongs to Area 2 — every non-backbone area touches Area 0 through its ABR.</p>
+        </div>
+    </div>
+    <div class="arch-diagram-wrap" style="margin-top:16px;">
+    <svg class="net-diagram-svg" viewBox="0 0 900 160" xmlns="http://www.w3.org/2000/svg">
+        <line class="net-link flow" x1="90" y1="80" x2="230" y2="80" />
+        <line class="net-link flow" x1="290" y1="80" x2="430" y2="80" />
+        <line class="net-link flow" x1="490" y1="80" x2="630" y2="80" />
+        <line class="net-link flow" x1="690" y1="80" x2="810" y2="80" />
+        <text class="link-label" x="160" y="66" text-anchor="middle">Area 1</text>
+        <text class="link-label" x="360" y="66" text-anchor="middle">R1–R2</text>
+        <text class="link-label" x="560" y="66" text-anchor="middle">Area 0 (backbone)</text>
+        <text class="link-label" x="750" y="66" text-anchor="middle">Area 2</text>
+        <g class="net-node"><rect class="node-rect" x="20" y="60" width="60" height="40" rx="6" /><text x="50" y="84" text-anchor="middle">LAN-A</text></g>
+        <g class="net-node"><circle class="node-circle core" cx="260" cy="80" r="20" /><text x="260" y="84" text-anchor="middle">R1</text></g>
+        <g class="net-node"><circle class="node-circle core" cx="460" cy="80" r="20" /><text x="460" y="84" text-anchor="middle">R2</text></g>
+        <g class="net-node"><circle class="node-circle core" cx="660" cy="80" r="20" /><text x="660" y="84" text-anchor="middle">R3</text></g>
+        <g class="net-node"><rect class="node-rect" x="820" y="60" width="60" height="40" rx="6" /><text x="850" y="84" text-anchor="middle">R4</text></g>
+    </svg>
+    </div>
+    <p class="figure-caption">Area flow: Area 1 (R1) → Area 0 backbone (R2–R3) → Area 2 (R4). R2 and R3 are the ABRs.</p>
+</div>
+
+                <div class="doc-section" id="m4b-addressing">
+    <div class="doc-section-head"><span class="doc-num">05</span><h2>Devices &amp; Addressing</h2></div>
+    
+</div>
+
+                <div class="doc-section" id="m4b-configuration">
+    <div class="doc-section-head"><span class="doc-num">06</span><h2>Configuration</h2></div>
+    <p class="note-box" style="margin-bottom:16px;">No OSPF configuration screenshots are available for this module — the router OSPF configuration below is shown as documented code, matching the pattern established in Module 2.</p>
+    <div class="config-steps" id="configSteps-m4b"></div>
+    
+</div>
+
+                <div class="doc-section" id="m4b-commands">
+        <div class="doc-section-head"><span class="doc-num">07</span><h2>Verification Commands</h2></div>
+        <div class="cmd-ref-list" id="cmdRefList-m4b"></div>
+    </div>
+
+                <div class="doc-section" id="m4b-video">
+    <div class="doc-section-head"><span class="doc-num">08</span><h2>Experiment Video</h2></div>
+    <div class="doc-card" style="padding-bottom:18px;">
+        <p style="margin-bottom:14px;">Module 4B — Experiment Walkthrough. Extending OSPF into Area 1, the Area 0 backbone and Area 2, and verifying inter-area connectivity.</p>
+        <div class="video-wrap">
+            <video controls preload="metadata" playsinline data-expect="module4b-experiment-walkthrough.mp4">
+                <source src="module4b-experiment-walkthrough.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</div>
+
+                <div class="doc-section" id="m4b-screenshots">
+    <div class="doc-section-head"><span class="doc-num">09</span><h2>Screenshots</h2></div>
+    <div id="galleryWrap-m4b"></div>
+</div>
+
+                <div class="doc-section" id="m4b-verification">
+    <div class="doc-section-head"><span class="doc-num">10</span><h2>Verification</h2></div>
+    <div class="verify-grid"><div class="verify-card"><h4>PC0 IP Configuration</h4><div class="verify-img-frame" data-lightbox-src="module4b-pc0-ip-configuration.png" data-lightbox-caption="PC0 configured with its IP address, subnet mask and default gateway."><img src="module4b-pc0-ip-configuration.png" alt="PC0 configured with its IP address, subnet mask and default gateway." onerror="this.closest('.verify-img-frame').outerHTML='&lt;div class=&quot;asset-missing&quot;&gt;&lt;span class=&quot;am-icon&quot;&gt;\u26a0&lt;/span&gt;Asset not found: &lt;code&gt;module4b-pc0-ip-configuration.png&lt;/code&gt;&lt;/div&gt;'"></div><p>Confirms the LAN-A end device is addressed correctly and pointed at R1 as its gateway.</p></div><div class="verify-card"><h4>Connectivity Verification</h4><div class="verify-img-frame" data-lightbox-src="module4b-connectivity-verification.png" data-lightbox-caption="Ping results confirming reachability across Area 1 → Area 0 → Area 2."><img src="module4b-connectivity-verification.png" alt="Ping results confirming reachability across Area 1 → Area 0 → Area 2." onerror="this.closest('.verify-img-frame').outerHTML='&lt;div class=&quot;asset-missing&quot;&gt;&lt;span class=&quot;am-icon&quot;&gt;\u26a0&lt;/span&gt;Asset not found: &lt;code&gt;module4b-connectivity-verification.png&lt;/code&gt;&lt;/div&gt;'"></div><p>Documented check: a ping from a PC in Area 1 (LAN-A) to a PC in Area 2 (LAN-D), confirming the inter-area OSPF path is working end-to-end.</p></div></div>
+</div>
+
+                <div class="doc-section" id="m4b-download">
+    <div class="doc-section-head"><span class="doc-num">11</span><h2>Packet Tracer File</h2></div>
+    <div class="pkt-card">
+        <div class="pkt-icon">⤓</div>
+        <div class="pkt-info">
+            <h4>module4b.pkt</h4>
+            <p>Packet Tracer file for the Module 4B multi-area OSPF experiment.</p>
+        </div>
+        <a class="btn btn-primary" href="module4b.pkt" download>Download .pkt</a>
+    </div>
+</div>
+
+                <div class="doc-section" id="m4b-result" style="margin-bottom:10px;">
+    <div class="doc-section-head"><span class="doc-num">12</span><h2>Result</h2></div>
+    <div class="result-card">
+        <div class="result-icon">✓</div>
+        <p>Module 4B extended OSPF into three areas — Area 1, the Area 0 backbone and Area 2 — using R2 and R3 as ABRs, with inter-area adjacencies and end-to-end reachability from LAN-A to LAN-D verified.</p>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= WAN, NAT, EIGRP & BGP ================= -->
+    <section class="view" id="view-module-5" hidden>
+        <div class="module-page">
+
+            <nav class="module-toc" id="m5Toc">
+<a href="#m5-overview" class="active"><span class="toc-num">01</span> Overview</a>
+<a href="#m5-objective"><span class="toc-num">02</span> Objective</a>
+<a href="#m5-concepts"><span class="toc-num">03</span> Concepts / Technologies</a>
+<a href="#m5-topology"><span class="toc-num">04</span> Topology</a>
+<a href="#m5-addressing"><span class="toc-num">05</span> Devices &amp; Addressing</a>
+<a href="#m5-configuration"><span class="toc-num">06</span> Configuration</a>
+<a href="#m5-commands"><span class="toc-num">07</span> Verification Commands</a>
+<a href="#m5-outputs"><span class="toc-num">08</span> Command Outputs</a>
+<a href="#m5-video"><span class="toc-num">09</span> Experiment Video</a>
+<a href="#m5-screenshots"><span class="toc-num">10</span> Screenshots</a>
+<a href="#m5-download"><span class="toc-num">11</span> Packet Tracer File</a>
+<a href="#m5-result"><span class="toc-num">12</span> Result</a>
+</nav>
+
+            <div class="module-body">
+
+                <div class="module-hero">
+                    <p class="small-label">Module 5</p>
+                    <h1>WAN, NAT, EIGRP & BGP</h1>
+                    <p>Connect the campus edge to an external network over a PPP WAN link, routing internally with EIGRP, translating with NAT/PAT, and peering externally with BGP.</p>
+                    <div class="module-hero-topics"><span class="chip">PPP</span><span class="chip">HDLC</span><span class="chip">EIGRP</span><span class="chip">NAT / PAT</span><span class="chip">BGP</span></div>
+                </div>
+
+                <div class="doc-section" id="m5-overview">
+    <div class="doc-section-head"><span class="doc-num">01</span><h2>Overview</h2></div>
+    <div class="doc-card"><p>Module 5 takes the campus network to its WAN edge. The topology is <span class="mono-cell">PC0 — SW0 — R0 — R1 — R2 — R3 — PC1</span>: R0 is the campus edge router, R1–R2–R3 form the internal WAN path, and PC1 sits on a remote network reached across it.</p><p>Serial links use PPP encapsulation, the internal WAN routers exchange routes with EIGRP, R0 performs NAT/PAT to translate the campus network to its WAN-facing address, and BGP is used to peer the campus AS with an external AS across the R1–R2 link. HDLC is covered as a configuration/learning objective for this module.</p></div>
+</div>
+
+                <div class="doc-section" id="m5-objective">
+    <div class="doc-section-head"><span class="doc-num">02</span><h2>Objective</h2></div>
+    <div class="doc-card"><p>Bring up a PPP-encapsulated WAN link, route internally with EIGRP (AS 100), translate campus traffic with NAT/PAT on R0, and establish an external BGP peering between the campus AS and the ISP AS — verifying reachability from PC0 to PC1 end-to-end.</p></div>
+</div>
+
+                <div class="doc-section" id="m5-concepts">
+    <div class="doc-section-head"><span class="doc-num">03</span><h2>Concepts / Technologies</h2></div>
+    <div class="concept-grid"><div class="concept-card"><h4>What is PPP?</h4><p>Point-to-Point Protocol — a WAN serial encapsulation that supports authentication, compression and multilink, commonly used on point-to-point router links.</p></div><div class="concept-card"><h4>What is HDLC?</h4><p>High-Level Data Link Control — Cisco’s default serial encapsulation. It is simpler than PPP but lacks PPP’s authentication and negotiation features. Covered here as a learning objective.</p></div><div class="concept-card"><h4>What is EIGRP?</h4><p>Enhanced Interior Gateway Routing Protocol — an advanced distance-vector protocol that uses a composite metric (bandwidth, delay, and more) and converges faster than RIP.</p></div><div class="concept-card"><h4>What is NAT/PAT?</h4><p>Network Address Translation / Port Address Translation — translates private internal addresses to a public/WAN-facing address, with PAT using port numbers so many internal hosts can share one external address.</p></div><div class="concept-card"><h4>What is BGP?</h4><p>Border Gateway Protocol — the path-vector routing protocol used to exchange routes between separately administered networks (Autonomous Systems), such as a campus network and its ISP.</p></div><div class="concept-card"><h4>What is an Autonomous System (AS)?</h4><p>A network or group of networks under a single administrative authority, identified by an AS number, used as the unit BGP peers with.</p></div></div>
+</div>
+
+                <div class="doc-section" id="m5-topology">
+    <div class="doc-section-head"><span class="doc-num">04</span><h2>Topology</h2></div>
+    <div class="topology-figure">
+        <div>
+            <div class="topology-img-frame" data-lightbox-src="module5-topology.png" data-lightbox-caption="Module 5 — actual Packet Tracer topology: PC0 — SW0 — R0 — R1 — R2 — R3 — PC1."><img src="module5-topology.png" alt="Module 5 — actual Packet Tracer topology: PC0 — SW0 — R0 — R1 — R2 — R3 — PC1." onerror="this.closest('.topology-img-frame').outerHTML='&lt;div class=&quot;asset-missing&quot;&gt;&lt;span class=&quot;am-icon&quot;&gt;\u26a0&lt;/span&gt;Asset not found: &lt;code&gt;module5-topology.png&lt;/code&gt;&lt;/div&gt;'"></div>
+            <p class="figure-caption">Fig. 1 — Module 5 — actual Packet Tracer topology: PC0 — SW0 — R0 — R1 — R2 — R3 — PC1.</p>
+        </div>
+        <div class="topology-notes">
+            <p style="font-size:13px; color:var(--text-muted); margin-bottom:12px;">Role of each device:</p>
+            <ul><li><strong>PC0</strong> — campus end device, on the R0-side LAN.</li><li><strong>R0</strong> — campus edge router: connects the campus LAN, performs NAT/PAT, and starts the PPP WAN link.</li><li><strong>R1, R2, R3</strong> — internal WAN path routers, routed with EIGRP; the R1–R2 link also carries the external BGP peering.</li><li><strong>PC1</strong> — remote end device, on the R3-side LAN.</li></ul>
+            <p style="font-size:13px; color:var(--text-muted); margin-top:14px;">BGP peering is configured directly between R1 and R2 over the 10.10.30.0/30 link, as documented: R1 in AS 65002 and R2 in AS 65001 (the campus AS), with R2 advertising 192.168.10.0/24 into BGP.</p>
+        </div>
+    </div>
+    
+</div>
+
+                <div class="doc-section" id="m5-addressing">
+    <div class="doc-section-head"><span class="doc-num">05</span><h2>Devices &amp; Addressing</h2></div>
+    <p style="font-size:12.5px; color:var(--text-faint); margin-bottom:8px; text-transform:uppercase; letter-spacing:.05em; font-weight:600;">Device addressing</p><div class="table-scroll" style="margin-bottom:20px;"><table class="data-table"><thead><tr><th>Device</th><th>Interface</th><th>Address</th></tr></thead><tbody><tr><td>R0</td><td class="mono-cell">G0/0</td><td class="mono-cell">192.168.10.1/24</td></tr><tr><td>R0</td><td class="mono-cell">S0/1/0</td><td class="mono-cell">10.10.10.1/30</td></tr><tr><td>R1</td><td class="mono-cell">S0/1/0</td><td class="mono-cell">10.10.10.2/30</td></tr><tr><td>R1</td><td class="mono-cell">G0/1</td><td class="mono-cell">10.10.30.2/30</td></tr><tr><td>R2</td><td class="mono-cell">G0/0</td><td class="mono-cell">10.10.30.1/30</td></tr><tr><td>R2</td><td class="mono-cell">G0/1</td><td class="mono-cell">10.10.20.1/30</td></tr><tr><td>R3</td><td class="mono-cell">G0/1</td><td class="mono-cell">10.10.20.2/30</td></tr><tr><td>R3</td><td class="mono-cell">G0/0</td><td class="mono-cell">192.168.40.1/24</td></tr><tr><td>PC0</td><td class="mono-cell">—</td><td class="mono-cell">192.168.10.10 (GW 192.168.10.1)</td></tr><tr><td>PC1</td><td class="mono-cell">—</td><td class="mono-cell">192.168.40.10 (GW 192.168.40.1)</td></tr></tbody></table></div>
+</div>
+
+                <div class="doc-section" id="m5-configuration">
+    <div class="doc-section-head"><span class="doc-num">06</span><h2>Configuration</h2></div>
+    
+    <div class="config-steps" id="configSteps-m5"></div>
+    <p class="note-box" style="margin-top:16px;">EIGRP is configured under Autonomous System 100 using the actual internal networks configured in the experiment. Exact per-router <span class="mono-cell">network</span> statements were not included in the supplied evidence, so they are not reproduced here to avoid inventing CLI that was not documented.</p>
+</div>
+
+                <div class="doc-section" id="m5-commands">
+        <div class="doc-section-head"><span class="doc-num">07</span><h2>Verification Commands</h2></div>
+        <div class="cmd-ref-list" id="cmdRefList-m5"></div>
+    </div>
+
+                <div class="doc-section" id="m5-outputs">
+    <div class="doc-section-head"><span class="doc-num">08</span><h2>Command Outputs — Documented</h2></div>
+    <p class="note-box" style="margin-bottom:16px;">Module 5 has no verification screenshots — only the topology image and experiment video were captured. The outputs below are documented from the working experiment, not screenshots, and are labelled as such. No exact CLI values beyond what was documented are invented.</p>
+    <div class="output-list" id="outputList-m5"></div>
+</div>
+
+                <div class="doc-section" id="m5-video">
+    <div class="doc-section-head"><span class="doc-num">09</span><h2>Experiment Video</h2></div>
+    <div class="doc-card" style="padding-bottom:18px;">
+        <p style="margin-bottom:14px;">Module 5 — Experiment Walkthrough. Bringing up the PPP WAN link, EIGRP, NAT/PAT on R0, and the external BGP peering between R1 and R2.</p>
+        <div class="video-wrap">
+            <video controls preload="metadata" playsinline data-expect="module5-experiment-walkthrough.mp4">
+                <source src="module5-experiment-walkthrough.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</div>
+
+                <div class="doc-section" id="m5-screenshots">
+    <div class="doc-section-head"><span class="doc-num">10</span><h2>Screenshots</h2></div>
+    <div id="galleryWrap-m5"></div>
+</div>
+
+                <div class="doc-section" id="m5-download">
+    <div class="doc-section-head"><span class="doc-num">11</span><h2>Packet Tracer File</h2></div>
+    <div class="pkt-card">
+        <div class="pkt-icon">⤓</div>
+        <div class="pkt-info">
+            <h4>module5.pkt</h4>
+            <p>Packet Tracer file for the Module 5 WAN, NAT, EIGRP and BGP experiment.</p>
+        </div>
+        <a class="btn btn-primary" href="module5.pkt" download>Download .pkt</a>
+    </div>
+</div>
+
+                <div class="doc-section" id="m5-result" style="margin-bottom:10px;">
+    <div class="doc-section-head"><span class="doc-num">12</span><h2>Result</h2></div>
+    <div class="result-card">
+        <div class="result-icon">✓</div>
+        <p>Module 5 was successfully configured and verified through the BGP stage: the PPP WAN link came up, EIGRP routed the internal WAN, NAT/PAT translated campus traffic on R0, and BGP peered the campus AS (65001) with the external AS (65002) with the campus network advertised. HDLC is documented as a configuration/learning objective for this module; no fabricated screenshots or command output are presented for it since no evidence was captured.</p>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <span>Campus Network — Cisco Packet Tracer Project</span>
+        <span>Documentation platform</span>
+    </footer>
+
+</main>
+
+<!-- ============================================================
+     LIGHTBOX
+     ============================================================ -->
+<div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+    <div class="lightbox-content">
+        <img id="lightboxImg" src="" alt="">
+        <p class="lightbox-caption" id="lightboxCaption"></p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
